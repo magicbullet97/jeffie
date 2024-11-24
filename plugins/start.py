@@ -155,7 +155,10 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 
 # =====================================================================================##
 
-
+        invite = await client.create_chat_invite_link(
+            chat_id=FORCE_SUB_CHANNEL_1,FORCE_SUB_CHANNEL_2,FORCE_SUB_CHANNEL_3,FORCE_SUB_CHANNEL_4,
+            creates_join_request=True
+        )
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = [
