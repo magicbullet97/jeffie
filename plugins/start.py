@@ -202,8 +202,6 @@ async def not_joined(client: Client, message: Message):
     except IndexError:
         pass
 
-    reply_markup = InlineKeyboardMarkup(buttons)
-    await message.reply("Please join the channels:", reply_markup=reply_markup)
 
     if FORCE_PIC:  # Check if FORCE_PIC has a value
         await message.reply_photo(
