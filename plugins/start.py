@@ -193,6 +193,19 @@ async def not_joined(client: Client, message: Message):
     except IndexError:
         pass
 
+if FORCE_PIC: # Check if FORCE_PIC has a value
+    await message.reply_photo(
+        photo=FORCE_PIC,
+        caption=FORCE_MSG.format(
+            first=message.from_user.first_name,
+            last=message.from_user.last_name,
+            username=None if not message.from_user.username else '@' + message.from_user.username,
+            mention=message.from_user.mention,
+            id=message.from_user.id
+        ),
+        reply_markup=InlineKeyboardMarkup(buttons)
+    )
+   else:
     await message.reply(
         text = FORCE_MSG.format(
                 first = message.from_user.first_name,
