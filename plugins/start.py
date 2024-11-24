@@ -155,20 +155,34 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 
 # =====================================================================================##
 
-        invite = await client.create_chat_invite_link(
-            chat_id=FORCE_SUB_CHANNEL_1,FORCE_SUB_CHANNEL_2,FORCE_SUB_CHANNEL_3,FORCE_SUB_CHANNEL_4,
-            creates_join_request=True
-        )
+
+ invite1 = await client.create_chat_invite_link(
+    chat_id=FORCE_SUB_CHANNEL_1,
+    creates_join_request=True
+)
+invite2 = await client.create_chat_invite_link(
+    chat_id=FORCE_SUB_CHANNEL_2,
+    creates_join_request=True
+)
+invite3 = await client.create_chat_invite_link(
+    chat_id=FORCE_SUB_CHANNEL_3,
+    creates_join_request=True
+)
+invite4 = await client.create_chat_invite_link(
+    chat_id=FORCE_SUB_CHANNEL_4,
+    creates_join_request=True
+)
+
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = [
         [
-            InlineKeyboardButton(text="• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite.invitelink),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •", url=invite.invitelink2),
+            InlineKeyboardButton(text="• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite1.invite_link),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •", url=invite2.invite_link),
         ],
         [
-            InlineKeyboardButton(text="• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite.invitelink3),
-            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •", url=invite.invitelink4),
+            InlineKeyboardButton(text="• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite3.invite_link),
+            InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •", url=invite4.invite_link),
         ]
     ]
     try:
@@ -182,6 +196,9 @@ async def not_joined(client: Client, message: Message):
         )
     except IndexError:
         pass
+
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await message.reply("Please join the channels:", reply_markup=reply_markup)
 
     if FORCE_PIC:  # Check if FORCE_PIC has a value
         await message.reply_photo(
