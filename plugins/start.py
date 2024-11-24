@@ -28,7 +28,7 @@ async def create_invite_links(client: Client):
         chat_id=FORCE_SUB_CHANNEL_4,
         creates_join_request=True
     )
-    return
+    return invite1, invite2, invite3, invite4
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
