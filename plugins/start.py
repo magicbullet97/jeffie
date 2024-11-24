@@ -11,6 +11,26 @@ from helper_func import subscribed, decode, get_messages, delete_file
 from database.database import add_user, del_user, full_userbase, present_user
 
 
+async def create_invite_links(client: Client):
+    invite1 = await client.create_chat_invite_link(
+        chat_id=FORCE_SUB_CHANNEL_1,
+        creates_join_request=True
+    )
+    invite2 = await client.create_chat_invite_link(
+        chat_id=FORCE_SUB_CHANNEL_2,
+        creates_join_request=True
+    )
+    invite3 = await client.create_chat_invite_link(
+        chat_id=FORCE_SUB_CHANNEL_3,
+        creates_join_request=True
+    )
+    invite4 = await client.create_chat_invite_link(
+        chat_id=FORCE_SUB_CHANNEL_4,
+        creates_join_request=True
+    )
+    return invite1, invite2, invite3, invite4
+
+
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
@@ -155,25 +175,11 @@ REPLY_ERROR = """<code>Use this command as a replay to any telegram message with
 
 # =====================================================================================##
 
-invite1 = await client.create_chat_invite_link(
-    chat_id=FORCE_SUB_CHANNEL_1,
-    creates_join_request=True
-)
-invite2 = await client.create_chat_invite_link(
-    chat_id=FORCE_SUB_CHANNEL_2,
-    creates_join_request=True
-)
-invite3 = await client.create_chat_invite_link(
-    chat_id=FORCE_SUB_CHANNEL_3,
-    creates_join_request=True
-)
-invite4 = await client.create_chat_invite_link(
-    chat_id=FORCE_SUB_CHANNEL_4,
-    creates_join_request=True
-)
-
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
+    # Create invite links before using them
+    invite1, invite2, invite3, invite4 = await create_invite_links(client)
+
     buttons = [
         [
             InlineKeyboardButton(text="• ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite1.invite_link),
