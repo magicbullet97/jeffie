@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://www.python.org">
-    <img src="http://ForTheBadge.com/images/badges/made-with-python-By-𝕎𝕖𝕖𝕜𝕖𝕟𝕕𝕤𝔹𝕠𝕥𝕫.svg" width ="250">
+    <img src="http://ForTheBadge.com/images/badges/made-with-python.svg" width ="250">
   </a>
   <a href="https://t.me/Anime_Weekends">
     <img src="https://envs.sh/KTy.jpg">
