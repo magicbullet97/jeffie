@@ -140,7 +140,7 @@ Report Bugs, Give Feature Requests There..
 - Our Support Group Members
 
 ### Licence
-[![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)  
+[![GNU GPLv3 Image](https://envs.sh/KN2.jpg)](http://t.me/Anime_Weekends)  
 
 [FILE-SHARING-BOT](https://github.com/WeekendAnime/WeekendsBotz_Advance_FileStore/) is Paid Software: You can use, study share and improve it at your
 will. 
