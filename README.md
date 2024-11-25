@@ -88,11 +88,15 @@ python3 main.py
 * `APP_ID` Your API ID from my.telegram.org
 * `TG_BOT_TOKEN` Your bot token from @BotFather
 * `OWNER_ID` Must enter Your Telegram Id
-* `CHANNEL_ID` Your Channel ID eg:- -100xxxxxxxx
+* `CHANNEL_ID_1` Your Channel ID eg:- -100xxxxxxxx
+* `CHANNEL_ID_2` Your Channel ID eg:- -100xxxxxxxx
+* `CHANNEL_ID_3` Your Channel ID eg:- -100xxxxxxxx
+* `CHANNEL_ID_4` Your Channel ID eg:- -100xxxxxxxx
 * `DATABASE_URL` Your mongo db url
 * `ADMINS` Optional: A space separated list of user_ids of Admins, they can only create links
 * `START_MESSAGE` Optional: start message of bot, use HTML and <a href='https://https://github.com/WeekendAnime/WeekendsBotz_Advance_FileStore/blob/main/README.md#start_message'>fillings</a>
 * `START_PIC` Optional: URL or file path of the image to be sent as the start message
+* `FORCE_PIC` Optional: URL or file path of the image to be sent as the force message
 * `FORCE_SUB_MESSAGE`Optional:Force sub message of bot, use HTML and Fillings
 * `FORCE_SUB_CHANNEL` Optional: ForceSub Channel ID, leave 0 if you want disable force sub
 * `PROTECT_CONTENT` Optional: True if you need to prevent files from forwarding
