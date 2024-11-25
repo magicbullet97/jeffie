@@ -1,4 +1,4 @@
-# File-sharing-Bot
+# Weekends File Sharing Bot
 
 <p align="center">
   <a href="https://www.python.org">
