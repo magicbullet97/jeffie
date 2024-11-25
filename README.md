@@ -17,10 +17,12 @@ I Wish Everyone Who Bought This Repository Has Satisfied .....😇.
 ### Features
 - Fully customisable.
 - Customisable welcome & Forcesub messages.
+- Customisable welcome & Forcesub images.
 - More than one Posts in One Link.
 - Can be deployed on heroku directly.
 - Protect Content to Prevent Forwarding
 - Auto-Delete Files After a Configurable Time
+- Many More...
 
 ## What’s Next
 
