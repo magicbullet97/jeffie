@@ -1,4 +1,4 @@
-#(©)Codexbotz
+#(©) WeekendsBotz
 #@iryme
 
 from aiohttp import web
