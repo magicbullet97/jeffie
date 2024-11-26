@@ -1,4 +1,4 @@
-#(©)Codexbotz
+#(©) WeekendsBotz
 #rymme
 
 from aiohttp import web
